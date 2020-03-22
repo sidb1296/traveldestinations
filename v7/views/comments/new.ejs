@@ -1,0 +1,24 @@
+<%- include ('../partials/header.ejs') %>
+<div class="container">
+    <div class="row">
+        <h1 style="width:100%; text-align:center;">Comment Here to <%=thefoundplace.name%></h1>
+        <div style="width:30%; margin: 0 auto;">
+            <form action="/places/<%=thefoundplace.id%>/comments" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="comment[text]" placeholder= "text" required>
+
+                </div>
+      
+                <button class="btn btn-lg btn-primary btn-block">Submit</button>
+            
+            </form>
+            <a href="/places">Back to  Places!</a>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<%- include ('../partials/footer.ejs') %>

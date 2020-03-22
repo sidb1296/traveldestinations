@@ -1,0 +1,64 @@
+<%- include ('../partials/header.ejs') %>
+
+<div class="container">
+    <h1 class="text-center"><%= theplace.name %></h1>
+    <div class="container" >
+        <div class="img-thumbnail" style="width:100%">
+            <img src="<%= theplace.image %>" style="display: block;
+            margin-left: auto;       margin-right: auto;width: 50%;">
+            <div class="caption">
+                <p><%= theplace.description %></p>
+                <p>
+                    <em>Submitted by: <%= theplace.author.username %></em>
+                </p>
+                
+                <% if(curUser && curUser._id.equals(theplace.author.id)){ %>
+                <a class="btn btn-warning" href="<%=theplace.id%>/edit">
+                    Edit
+                </a>
+                <form id="delete-form" action="/places/<%=theplace.id%>?_method=DELETE" METHOD="POST">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        
+            <a class="btn btn-primary pull-right" href="<%= theplace.id %>/comments/new">Comment Here!</a>
+        
+            <% theplace.comments.forEach(function(comment){ %>
+                <div class="row">
+                    <div class="col-md-12">
+                        <strong>
+                            <%= comment.author.username %>
+                        </strong> 
+        
+                        <span class="pull-right">10 days ago</span>
+                        <p>
+                            - <%= comment.text%>
+                        </p>
+                        <% if(curUser && curUser._id.equals(comment.author.id)){ %>
+
+                        <a class="btn btn-xs btn-warning" href="/places/<%=theplace.id%>/comments/<%=comment.id%>/edit">Edit</a>
+                        <form id="delete-form" action="/places/<%=theplace.id%>/comments/<%=comment.id%>?_method=DELETE" METHOD="POST">
+                            <button class="btn btn-xs btn-danger">Delete</button>
+                        </form>
+                        <% } %>
+    
+                    </div>
+                </div>
+                 
+           <% }) %>
+    </div>
+    
+</div>
+
+
+
+
+<%- include ('../partials/footer.ejs') %>
+
+
+
+

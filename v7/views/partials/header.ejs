@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      TravelPlaces
+    </title>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+      <meta charset="utf-8">    <link href="/css/main.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default" role="navigation">
+
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Destinations</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            </div>   
+
+            <div class="collapse navbar-collapse" id="nav-collapse">
+                    <!-- Individual Navbar elements -->
+                <ul class="nav navbar-nav navbar-right nasti-nav">
+                        <%   if(!curUser){ %>
+                            <li ><a href="/login">Login</a></li>
+                            <li ><a href="/register">Sign Up</a></li>
+                            
+                            <%  } else { %>
+                                <li ><a href="/"><%=curUser.username.toUpperCase()%></a></li>
+                            <li ><a href="/logout">Logout</a></li>
+                        <%   } %>
+                </ul>
+            </div> 
+        </div> <!-- Container fluid-->
+
+    </nav>
+
+
+
+
+    <div class="container">
+        <% if(error && error.length>0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>        
+        <% } else if(success && success.length>0){ %> 
+            <div class="alert alert-success" role="alert">
+                <%= success %> 
+            </div>        
+        <% } %>
+
+    
+    </div>
+

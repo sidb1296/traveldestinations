@@ -1,0 +1,49 @@
+<%- include ('../partials/header.ejs') %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Explore Places</h1>
+            <p>View the hand-picked places from around the world</p>
+            <p>
+                <a class="btn btn-primary btn-large " href="/places/new">ADD a new Place!</a>
+            </p>
+        </div>
+    </header>
+        <div class="row text-center" style="position: relative;display:flex; flex-wrap:wrap">
+            <% places.forEach(function(place){ %>
+            <div class="col-md-3 col-sm-6" style="margin-bottom:10px;position: relative;">
+                <div class="h-100 d-inline-block img-thumbnail"style="position: relative;padding-bottom:23px;" >
+                    <div class="row" style="height: 100%;">
+                        <div class="h-90 d-block col-md-12" style="height:65%;">
+                            <img src="<%=place.image %>" style="max-width: 100%;max-height:100%;">
+                        </div>
+                        <div class="h10 d-block col-md-12" style="height: 48%; padding-bottom: 26px;" >
+                            <div class="caption" style="
+                            max-height: 28%;
+                        " >
+                                <h5>
+                                    <%= place.name%>
+                                </h5>
+                            </div>
+                            <div class="container" style="
+                            max-height: 72%;
+                        ">
+                                <p>
+                                    <a href="/places/<%= place.id%>" class="btn btn-secondary">More Info</a>
+                                </p>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>                    
+            </div>
+        <% }); %>
+    </div>
+    
+
+    
+</div>
+<%- include ('../partials/footer.ejs') %>
+
+
