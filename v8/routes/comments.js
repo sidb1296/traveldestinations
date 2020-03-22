@@ -27,12 +27,24 @@ router.get("/places/:id/comments/new",middleware.checkAuthentication,function(re
                // console.log(req.body.comment);
                // console.log(foundcomment);
                //  console.log(req.user._id);
+               // var datte=getDate();
+               var today = new Date();
+               var todaydate = (today.getDate()).toString();
+               var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+               var curmonth=months[today.getMonth()];
+               var curyear=today.getFullYear().toString();
+               var curdate=todaydate+" "+curmonth+" "+curyear;
+
                foundcomment.author.id=req.user._id;
                foundcomment.author.username=req.user.username;
+               foundcomment.created = curdate;
                foundcomment.save();
+
                 foundplace.comments.push(foundcomment);
                 foundplace.save();
-               //  console.log(foundcomment);
+                console.log(foundcomment);
+
+               //  console.log(foundcomment," COMMENT");
                //  console.log(foundplace);
                // console.log(req.body.comment);
                // console.log(foundcomment);
