@@ -5,11 +5,12 @@ height:100%
 }
 
 body{
-background-image:linear-gradient(141deg, #2d302f 0%, #ef5f5f 51%, #27a2d0 75%);
+/* background-image:linear-gradient(141deg, #2d302f 0%, #ef5f5f 51%, #27a2d0 75%); */
+background-color: white;
 background-attachment: fixed;
 letter-spacing: 0.2em;
 height:100%;
-font-size:35px;
+font-size:20px;
 min-width: 300px;
 
 
@@ -17,8 +18,8 @@ min-width: 300px;
 h1, .h1 {
     font-size: 59px;
     font-size: 59px;
-    color: white;
-    font-variant: all-small-caps;
+    color: #00baa9;;
+    font-variant: unicase;;
 }
 #navbarid{
     background: rgb(34,83,195);
@@ -26,6 +27,8 @@ h1, .h1 {
 border: 0;
 border-color:none;
 color: white;
+
+
 }
 .navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand {
     color: #eee;
@@ -81,7 +84,7 @@ color: white;
 #imagetitle{
     font-weight: 700;
 
-    color: white;
+    color: #108277;;
     font-size: 20px;
     letter-spacing: 0.4em;
     display: block;
@@ -156,5 +159,27 @@ color: white;
     font-size: 15px;
     letter-spacing: 0;
 }
+.alert-danger{
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    font-size: 15px;
+    letter-spacing: 0;
+}
 
 /* PARTICULAR POST /PLACES/:ID */
+
+.img-thumbnail, #commentsaddorview{
+    text-align: justify;
+    letter-spacing: 0.1em;
+    font-size: 68%;
+    width: 100%;
+}
+
+hr {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: none;
+}
