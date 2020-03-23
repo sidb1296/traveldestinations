@@ -5,7 +5,7 @@
         <div style="width:30%; margin: 0 auto;">
             <form action="/places" method="POST">
                 <div class="form-group">
-                    <input class="form-control" type="text" name="name" placeholder= "name" maxlength="11" required>
+                    <input class="form-control" type="text" name="name" placeholder= "name" minlength="6" maxlength="11" required>
 
                 </div>
                 <div class="form-group">
@@ -17,7 +17,7 @@
                 <button class="btn btn-lg btn-primary btn-block">Submit</button>
             
             </form>
-            <a href="/places">Back to  Places!</a>
+            <a href="/places" class="btn btn-primary btn-xs" role="button" style="background-color: grey;">Go Back</a>
 
         </div>
 

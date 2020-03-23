@@ -15,6 +15,10 @@ min-width: 300px;
 
 
 }
+a{
+    color: #00baa9;
+    letter-spacing: 0.1em;
+}
 h1, .h1 {
     font-size: 59px;
     font-size: 59px;
@@ -182,4 +186,19 @@ hr {
     margin-bottom: 20px;
     border: 0;
     border-top: none;
+}
+.btn-warning {
+    color: #fff;
+    background-color: #14b644;
+    border-color: #0f691b;
+}
+
+#editplaceshowpage, #deleteplaceshowpage{
+    border-radius: 72px;
+    padding: 11px;
+}
+
+.btn-warning:hover{
+    background-color: #07cc42;
+    border-color: #545921;
 }

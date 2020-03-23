@@ -5,14 +5,14 @@
         <div style="width:30%; margin: 0 auto;">
             <form action="/places/<%=thefoundplace.id%>/comments" method="POST">
                 <div class="form-group">
-                    <textarea class="form-control" row="5" type="text" name="comment[text]"  placeholder= "Comment Here" required></textarea>
+                    <textarea class="form-control" row="5" type="text" name="comment[text]" minlength="5" placeholder= "Comment Here" required></textarea>
 
                 </div>
       
                 <button class="btn btn-lg btn-primary btn-block">Submit</button>
             
             </form>
-            <a href="/places">Back to  Places!</a>
+            <a href="/places" class="btn btn-primary btn-xs" role="button" style="background-color: grey;">Go Back</a>
 
         </div>
 

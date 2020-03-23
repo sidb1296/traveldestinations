@@ -1,9 +1,8 @@
 <%- include ('../partials/header.ejs') %>
+<a href="/places" class="btn btn-primary btn-xs" role="button" style="background-color: grey;">Go Back</a>
 
-<div class="container" style="
-width: 100%;
-background-color: white;
-">
+<div class="container">
+
     <h1 class="text-center"><%= theplace.name %></h1>
     <div class="container" style="width: 100%;">
                 <div class="img-thumbnail" style="border: none;width:100%;background-color: inherit;padding: 0;">
@@ -24,68 +23,71 @@ background-color: white;
                         border-radius: 21px;
                         ">
                             <div class="caption" style="
-                            margin: 17px; 
+                            margin-top: 12px;
                         ">
                                 <p><%= theplace.description %></p>
-                                <p>
-                                    <em>Submitted by: <%= theplace.author.username %></em>
-                                </p>
                                 
-                                <% if(curUser && curUser._id.equals(theplace.author.id)){ %>
-                                <a class="btn btn-warning" href="<%=theplace.id%>/edit">
-                                    Edit
-                                </a>
-                                <form id="delete-form" action="/places/<%=theplace.id%>?_method=DELETE" METHOD="POST">
-                                    <button class="btn btn-danger">Delete</button>
-                                </form>
-                                <% } %>
                             </div>
                         </div>
+                        <p class="pull-right">
+                            <em style="
+                            font-size: 15px;
+                            letter-spacing: 0.2em;
+                        ">Submitted by: <%= (theplace.author.username).toUpperCase() %></em>
+                        </p>
                     </div>
                 </div>
     </div>
 
-    <div class="container" id="commentsaddorview" style="
-    /* background-color: #ffffff; */
-">
-<a class="btn btn-primary pull-right" href="<%= theplace.id %>/comments/new">Comment Here!</a>
+    <div class="container" id="commentsaddorview">
 
-        <hr>
-            <% var a=1; theplace.comments.forEach(function(comment){ %>
-                <%if(a%2==0){%>
-                    <div class="row" style="    border-radius: 24px;
+                <% if(curUser && curUser._id.equals(theplace.author.id)){ %>
+                    <a class="btn btn-warning" id="editplaceshowpage" href="<%=theplace.id%>/edit">
+                        Edit
+                    </a>
+                    <form id="delete-form" action="/places/<%=theplace.id%>?_method=DELETE" METHOD="POST">
+                        <button class="btn btn-danger" id="deleteplaceshowpage">Delete</button>
+                    </form>
+                <% } %>
 
-                    background: #f8f8fa;padding: 13px;margin-bottom: 10px;
-                ">
-                <%a=a+1;console.log(a);}else{%>
-                    <div class="row" style="
-                    background: white;padding: 13px; border-radius: 24px;margin-bottom: 10px;">
-                <%a=a+1;console.log(a);} %>
-                    
+            <a class="btn btn-primary pull-right" href="<%= theplace.id %>/comments/new">Comment</a>
+
+                <hr>
+                    <% var a=1; theplace.comments.forEach(function(comment){ %>
+                        <%if(a%2==0){%>
+                            <div class="row" style="    border-radius: 24px;
+
+                            background: #f8f8fa;padding: 13px;margin-bottom: 10px;
+                        ">
+                        <%a=a+1;;}else{%>
+                            <div class="row" style="
+                            background: white;padding: 13px; border-radius: 24px;margin-bottom: 10px;">
+                        <%a=a+1;;} %>
+                            
+                        
+                            <div class="col-md-12">
+                                <strong>
+                                    <%= (comment.author.username).toUpperCase() %>
+                                </strong> 
                 
-                    <div class="col-md-12">
-                        <strong>
-                            <%= (comment.author.username).toUpperCase() %>
-                        </strong> 
-        
-                        <span class="pull-right" style="
-                        font-size: 10px;
-                    "><b>Created on:</b> <%=comment.created%></span>
-                        <p>
-                            - <%= comment.text%>
-                        </p>
-                        <% if(curUser && curUser._id.equals(comment.author.id)){ %>
+                                <span class="pull-right" style="
+                                font-size: 10px;
+                            "><b>Created on:</b> <%=comment.created%></span>
+                                <p>
+                                    - <%= comment.text%>
+                                </p>
+                                <% if(curUser && curUser._id.equals(comment.author.id)){ %>
 
-                        <a class="btn btn-xs btn-warning" href="/places/<%=theplace.id%>/comments/<%=comment.id%>/edit">Edit</a>
-                        <form id="delete-form" action="/places/<%=theplace.id%>/comments/<%=comment.id%>?_method=DELETE" METHOD="POST">
-                            <button class="btn btn-xs btn-danger">Delete</button>
-                        </form>
-                        <% } %>
-    
-                    </div>
-                </div>
-                 
-           <% }) %>
+                                <a class="btn btn-xs btn-warning" href="/places/<%=theplace.id%>/comments/<%=comment.id%>/edit">Edit</a>
+                                <form id="delete-form" action="/places/<%=theplace.id%>/comments/<%=comment.id%>?_method=DELETE" METHOD="POST">
+                                    <button class="btn btn-xs btn-danger">Delete</button>
+                                </form>
+                                <% } %>
+            
+                            </div>
+                        </div>
+                        
+                <% }) %>
     </div>
     
 </div>
