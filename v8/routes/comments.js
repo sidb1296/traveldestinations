@@ -42,7 +42,7 @@ router.get("/places/:id/comments/new",middleware.checkAuthentication,function(re
 
                 foundplace.comments.push(foundcomment);
                 foundplace.save();
-                console.log(foundcomment);
+               //  console.log(foundcomment);
 
                //  console.log(foundcomment," COMMENT");
                //  console.log(foundplace);

@@ -11,7 +11,7 @@ var commentSchema = mongoose.Schema({
         username: String
     },
     created:String,
-    lastedited:String
+    // lastedited:String
 });
 
 // author:[

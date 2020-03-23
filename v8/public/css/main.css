@@ -1,3 +1,70 @@
+
+html{
+height:100%
+
+}
+
+body{
+background-image:linear-gradient(141deg, #2d302f 0%, #ef5f5f 51%, #27a2d0 75%);
+background-attachment: fixed;
+letter-spacing: 0.3em;
+height:100%
+
+
+}
+h1, .h1 {
+    font-size: 59px;
+    font-size: 59px;
+    color: white;
+    font-variant: all-small-caps;
+}
+#navbarid{
+    background: rgb(34,83,195);
+    background: linear-gradient(157deg, rgb(236, 236, 236)20%, rgb(0, 0, 0) 51%);
+border: 0;
+border-color:none;
+color: white;
+}
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand {
+    color: #eee;
+    letter-spacing: 0.2em;
+    font-size: initial;
+    font-variant: petite-caps;
+    font-weight: 100;
+}
+.navbar-default .navbar-nav>li>a:hover{
+    color:#fff;
+}
+.navbar-default .navbar-brand {
+    color:black;
+    font-size: x-large;
+    font-variant: small-caps;
+    font-weight: 500;
+
+
+}
+ .navbar-default .navbar-brand:hover{
+    color:black;
+}
+#landingpagebutton{
+    color: #fff;
+    background-color: #161717;
+    border: 0;
+    border-color: #ffffff;
+}
+#landingpagebutton:hover{
+    color: #fff0f0;
+    background-color: #6a8484;
+    border-color: #ffffff;
+}
 #delete-form{
     display:inline;
 }
+
+
+#thumbnailindexpageimages{
+    padding: 0;
+    border-radius: 3%;
+    border: none;
+}
+    
