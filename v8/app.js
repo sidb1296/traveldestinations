@@ -16,6 +16,7 @@ var commentRoutes = require("./routes/comments");
 var indexRoutes = require("./routes/index");
 
 
+
 mongoose.connect('mongodb://127.0.0.1:27017/destinations', {useNewUrlParser: true});
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
@@ -35,11 +36,15 @@ Passport.use(new LocalStrategy(User.authenticate()));
 Passport.serializeUser(User.serializeUser());
 Passport.deserializeUser(User.deserializeUser());
 
-app.use(function(req,res,next){
+
+
+
+ app.use(function(req,res,next){
    //middleware
    //so that curUser:req.user this is not
    // required to pass everytime on every
    // page
+   res.locals.url=req.url;
    res.locals.curUser = req.user;
    res.locals.error = req.flash("error");
    res.locals.success = req.flash("success");

@@ -5,15 +5,21 @@ height:100%
 }
 
 body{
-background:-webkit-linear-gradient(left,#6a11cb,#2575fc);
 background-attachment: fixed;
 letter-spacing: 0.2em;
 height:100%;
 font-size:20px;
 min-width: 300px;
+}
 
+#loginbackground{
+    background:-webkit-linear-gradient(left,#6a11cb,#2575fc);
+}
+#normalbackground{
+    background:white;
 
 }
+
 a{
     color: #00baa9;
     letter-spacing: 0.1em;
@@ -248,7 +254,7 @@ border-radius: 0px;
     background:-webkit-linear-gradient(right,#6a11cb,#2575fc);
         }
 
-        #loginformbutton:focus{
+#loginformbutton:focus{
             outline:0;
         }
 

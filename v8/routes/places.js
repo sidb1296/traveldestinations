@@ -2,9 +2,10 @@ var express = require("express");
 var router = express.Router();
 var Place = require("../models/place");
 var middleware = require("../middleware/index.js"); //you can say just ../middleware and it willautomatically require index.js always
+
 router.get('/places', function (req, res) {
 
-    // console.log(req.user);
+    console.log(req.host);
           Place.find({},function(err,foundplaces){
             //  function checkit(){
             //      if(req.user._id==)

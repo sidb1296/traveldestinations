@@ -5,6 +5,8 @@ var Comment = require("../models/comment");
 var middleware = require("../middleware/index.js"); //you can say just ../middleware and it willautomatically require index.js always
 
 router.get("/places/:id/comments/new",middleware.checkAuthentication,function(req,res){
+   // console.log(req.url);
+
     Place.findById(req.params.id,function(err,foundplace){
        if(err){
           console.log(err);
@@ -61,6 +63,8 @@ router.get("/places/:id/comments/new",middleware.checkAuthentication,function(re
 
 //EDIT COMMENT
  router.get("/places/:id/comments/:comment_id/edit",middleware.checkOwnershipOfComments,function(req,res){
+   // console.log(req.url);
+
    
       Place.findById(req.params.id,function(err,recievedPlace){
          if(err){
