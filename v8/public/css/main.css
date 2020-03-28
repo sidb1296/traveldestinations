@@ -210,20 +210,20 @@ hr {
 #loginformusername,#loginformpass{
   background-color: white; 
                 color:black;
-                padding:26px 0;
+                padding:26px 10px;
 border:0px;
 border-radius: 0px;
                 /* opacity:0.7; */
 }
 
-#loginformpass:focus, #loginformusername:focus{
-    background-color:white;
-    color:black;
+/* #loginformpass:focus-within, #loginformusername:focus{
+    color: white;
+    background-color: #1f2236;
     border-color:white;
     opacity:1;
-}
+} */
 #loginformpass:hover, #loginformusername:hover{
-    color:#0b5b54;
+    color: black;
     background-color: white;
 }
 
@@ -248,6 +248,8 @@ border-radius: 0px;
 background-color: #f4f4f4;                    /* border:1px solid Black; */
         }
 #logincontainer{
+    transition: .5s ease-in;
+
     background-color: 0.5;
     width: 64%;
     padding-bottom: 50px;
@@ -261,11 +263,11 @@ background-color: #f4f4f4;                    /* border:1px solid Black; */
     border-bottom-right-radius: 22px;
     position: relative;
     text-align: center;
-    background: -webkit-linear-gradient(left,#6a11cb,#2575fc);
+    background: white;
     height: 205px;
 }
   #logincontainer:hover{
-    box-shadow: 0px 0px 71px 50px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 10px 39px 4px rgba(0, 0, 0, 0.2);
 /* transform: scale(2,3);    
 -ms-transform: scale(2,3); */
 /* transform: translate(12px,15px);
@@ -275,3 +277,23 @@ transform: translate(12px,15px); */
 width: 65%;
 transition: .5s ease-in-out;
         }
+#logincontainer h4{
+    top: 0;
+    width: 100%;
+    position: absolute;
+    font-family: OpenSans-Regular;
+    color: #453948;
+    font-size: 40px;
+    line-height: 2.2;
+    text-transform: uppercase;
+}
+
+#logincontainer form{
+    width: 100%;
+        margin: auto;
+    text-align: center;
+}
+
+.flex-container div{
+    display: inline-block;    width: 50%;margin-bottom: 0px;
+}
