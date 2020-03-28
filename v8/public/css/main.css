@@ -235,7 +235,9 @@ border-radius: 0px;
     padding: 26px 0;
     border-bottom-left-radius: 22px;
     border-bottom-right-radius: 22px;
+    font-variant: petite-caps;
 
+    color: white;
 
     }
     
@@ -245,7 +247,8 @@ border-radius: 0px;
 
         color:black;
         /* background-color:linear-gradient(right,#6a11cb,#2575fc); */
-background-color: #f4f4f4;                    /* border:1px solid Black; */
+background-color: #f4f4f4;   
+                 /* border:1px solid Black; */
         }
 #logincontainer{
     transition: .5s ease-in;
@@ -282,10 +285,10 @@ transition: .5s ease-in-out;
     width: 100%;
     position: absolute;
     font-family: OpenSans-Regular;
-    color: #453948;
+    color: black;
     font-size: 40px;
     line-height: 2.2;
-    text-transform: uppercase;
+    font-variant: petite-caps;
 }
 
 #logincontainer form{
