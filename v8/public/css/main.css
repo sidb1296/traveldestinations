@@ -5,8 +5,7 @@ height:100%
 }
 
 body{
-/* background-image:linear-gradient(141deg, #2d302f 0%, #ef5f5f 51%, #27a2d0 75%); */
-background-color: white;
+background:-webkit-linear-gradient(left,#6a11cb,#2575fc);
 background-attachment: fixed;
 letter-spacing: 0.2em;
 height:100%;
@@ -210,9 +209,11 @@ hr {
 #loginformusername,#loginformpass{
   background-color: white; 
                 color:black;
-                padding:26px 10px;
+                padding:37px 16px;
 border:0px;
 border-radius: 0px;
+
+
                 /* opacity:0.7; */
 }
 
@@ -231,8 +232,8 @@ border-radius: 0px;
     background-color: Black;
     border-radius: 0px;
     border: none;
-    transition: .5s ease-in;
-    padding: 26px 0;
+
+    padding: 20px 0;
     border-bottom-left-radius: 22px;
     border-bottom-right-radius: 22px;
     font-variant: petite-caps;
@@ -242,18 +243,19 @@ border-radius: 0px;
     }
     
 
-#loginformbutton:hover{
-    transition: .5s ease-out;
-
-        color:black;
-        /* background-color:linear-gradient(right,#6a11cb,#2575fc); */
-background-color: #f4f4f4;   
-                 /* border:1px solid Black; */
+#loginformbutton:hover {
+    transition: 5s ease-in;
+    background:-webkit-linear-gradient(right,#6a11cb,#2575fc);
         }
+
+        #loginformbutton:focus{
+            outline:0;
+        }
+
+
 #logincontainer{
     transition: .5s ease-in;
-
-    background-color: 0.5;
+    background: inherit;
     width: 64%;
     padding-bottom: 50px;
     min-width: 300px;
@@ -261,37 +263,28 @@ background-color: #f4f4f4;
     padding-right: 0;
     max-width: 500px;
     border-radius: 0px;
-    padding: 78px 0px;
+    padding: 0px;
     border-bottom-left-radius: 22px;
     border-bottom-right-radius: 22px;
     position: relative;
     text-align: center;
-    background: white;
-    height: 205px;
+    /* background: white; */
+    height: 136px;
 }
-  #logincontainer:hover{
-    box-shadow: 0px 10px 39px 4px rgba(0, 0, 0, 0.2);
-/* transform: scale(2,3);    
--ms-transform: scale(2,3); */
-/* transform: translate(12px,15px);
-transform: translate(12px,15px); */
-/* padding: 10px; */
-    
-width: 65%;
-transition: .5s ease-in-out;
-        }
-#logincontainer h4{
-    top: 0;
+  
+#headingloginform, #headingregisterform{
+    /* top: 0; */
     width: 100%;
-    position: absolute;
-    font-family: OpenSans-Regular;
-    color: black;
+    /* position: absolute; */
+    
+    color:White;
     font-size: 40px;
     line-height: 2.2;
     font-variant: petite-caps;
 }
 
 #logincontainer form{
+    background: inherit;
     width: 100%;
         margin: auto;
     text-align: center;
@@ -299,4 +292,11 @@ transition: .5s ease-in-out;
 
 .flex-container div{
     display: inline-block;    width: 50%;margin-bottom: 0px;
+
+
+}
+
+.flex-container div input::-webkit-input-placeholder {
+    color: rgb(47, 47, 49);
+    font-weight: bold;
 }
