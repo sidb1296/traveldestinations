@@ -87,8 +87,9 @@ color: white;
     
 #imagetitle{
     font-weight: 700;
+    font-variant-caps: all-petite-caps;
 
-    color: #108277;;
+    color: #343636;;
     font-size: 20px;
     letter-spacing: 0.4em;
     display: block;
@@ -189,8 +190,8 @@ hr {
 }
 .btn-warning {
     color: #fff;
-    background-color: #14b644;
-    border-color: #0f691b;
+    background-color: #39433c;
+    border-color: #5c615d;
 }
 
 #editplaceshowpage, #deleteplaceshowpage{
@@ -199,6 +200,78 @@ hr {
 }
 
 .btn-warning:hover{
-    background-color: #07cc42;
-    border-color: #545921;
+    background-color: #49554d;
+    border-color: #5c615d;
+
 }
+
+
+/* LOGINUSER */
+#loginformusername,#loginformpass{
+  background-color: white; 
+                color:black;
+                padding:26px 0;
+border:0px;
+border-radius: 0px;
+                /* opacity:0.7; */
+}
+
+#loginformpass:focus, #loginformusername:focus{
+    background-color:white;
+    color:black;
+    border-color:white;
+    opacity:1;
+}
+#loginformpass:hover, #loginformusername:hover{
+    color:#0b5b54;
+    background-color: white;
+}
+
+#loginformbutton{
+    background-color: Black;
+    border-radius: 0px;
+    border: none;
+    transition: .5s ease-in;
+    padding: 26px 0;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+
+
+    }
+    
+
+#loginformbutton:hover{
+    transition: .5s ease-out;
+
+        color:black;
+        /* background-color:linear-gradient(right,#6a11cb,#2575fc); */
+background-color: #f4f4f4;                    /* border:1px solid Black; */
+        }
+#logincontainer{
+    background-color: 0.5;
+    width: 64%;
+    padding-bottom: 50px;
+    min-width: 300px;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 500px;
+    border-radius: 0px;
+    padding: 78px 0px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+    position: relative;
+    text-align: center;
+    background: -webkit-linear-gradient(left,#6a11cb,#2575fc);
+    height: 205px;
+}
+  #logincontainer:hover{
+    box-shadow: 0px 0px 71px 50px rgba(0, 0, 0, 0.2);
+/* transform: scale(2,3);    
+-ms-transform: scale(2,3); */
+/* transform: translate(12px,15px);
+transform: translate(12px,15px); */
+/* padding: 10px; */
+    
+width: 65%;
+transition: .5s ease-in-out;
+        }
