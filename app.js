@@ -61,7 +61,9 @@ app.get('/', function (req, res) {
     res.render("landing");
  });
 
+ const PORT = process.env.PORT || 3000;
 
-app.listen(3000, function () {
+//  app.listen(PORT, () => console.log(`Server is listening on port ${PORT}...`));
+app.listen(PORT, function () {
     console.log("Example app listening ");
  });
