@@ -17,7 +17,8 @@ var indexRoutes = require("./routes/index");
 
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/destinations', {useNewUrlParser: true});
+// mongoose.connect('mongodb://127.0.0.1:27017/destinations', {useNewUrlParser: true});
+mongoose.connect('mongodb://sid:Qwerty1234@ds211592.mlab.com:11592/destination', {useNewUrlParser: true});
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"))
