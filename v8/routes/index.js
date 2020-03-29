@@ -10,9 +10,8 @@ router.get("/register",function(req,res){
  router.post("/register",function(req,res){
     User.register(new User({username: req.body.username}),req.body.password,function(err,user){
        if(err){
-         //  console.log(err);
+         //  console.log(err.message);
           req.flash("error", err.message);
-
           return res.render("register")
        }else{
           Passport.authenticate("local")(req,res,function(){
@@ -36,7 +35,8 @@ router.get("/register",function(req,res){
  
  });
  router.post("/login", 
-            Passport.authenticate("local",{successRedirect:"/places", failureRedirect:"/login",successFlash: `You are now logged in!`}),
+            Passport.authenticate("local",{successRedirect:"/places", failureRedirect:"/login",
+            successFlash: `You are now logged in!`,failureFlash:`Wrong Credentials!`}),
             function(req,res){
 
  });
